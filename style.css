@@ -12,3 +12,10 @@
     height: 100%;
     background-color: #2B2E4A;
 }
+#calculator {
+    height: 700px;
+    width: 400px;
+    background-color: #53354A;
+    border-radius: 20px;
+    filter: drop-shadow(5px 5px 5px rgb(0, 0, 0, 0.25));
+}
