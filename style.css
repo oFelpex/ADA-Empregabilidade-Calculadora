@@ -15,9 +15,16 @@
 #calculator {
     height: 700px;
     width: 400px;
-    background-color: #53354A;
+    background-color: #5d635e;
     border-radius: 20px;
     border-style: ridge;
-    border-color: #1f151c;
+    border-color: #565f58;
     filter: drop-shadow(5px 5px 5px rgb(0, 0, 0, 0.25));
+}
+#display {
+    margin: 20px;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid;
+    background-color: #c6cfc3;
 }
