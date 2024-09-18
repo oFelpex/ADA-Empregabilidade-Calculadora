@@ -17,5 +17,7 @@
     width: 400px;
     background-color: #53354A;
     border-radius: 20px;
+    border-style: ridge;
+    border-color: #1f151c;
     filter: drop-shadow(5px 5px 5px rgb(0, 0, 0, 0.25));
 }
