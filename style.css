@@ -32,4 +32,22 @@
     display: grid;
     grid-template-rows: repeat(1fr, 5);
     grid-template-columns: repeat(1fr, 4);
+    align-items: center;
+    height: 75%;
+    row-gap: 10px;
+}
+button {
+    color: aliceblue;
+    background-color: #3f3f3f;
+    height: 70px;
+    width: 70px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+}
+#button-c {
+    grid-row: 1;
+    grid-column: 1;
+    background-color: red;
 }
