@@ -10,14 +10,14 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: #2B2E4A;
+    background-color: #3a428b;
 }
 #calculator {
     height: 700px;
     width: 400px;
-    background-color: #5d635e;
+    background-color: #466174;
     border-radius: 20px;
-    border: 1px ridge #565f58;
+    border: 1px ridge #2d4252;
     filter: drop-shadow(5px 5px 5px rgb(0, 0, 0, 0.25));
     box-shadow: inset  -4px -4px 10px rgba(0, 0, 0, 0.25);
 }
