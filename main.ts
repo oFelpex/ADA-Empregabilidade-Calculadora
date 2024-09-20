@@ -51,5 +51,11 @@ function createButtons() {
     divisionButton.textContent = "÷";
     divisionButton.style.gridRow = "1";
     buttonsContainer.appendChild(divisionButton);
+
+    const minusButton = document.createElement("button");
+    minusButton.id = "button-minus";
+    minusButton.textContent = "-";
+    minusButton.style.gridRow = "2";
+    buttonsContainer.appendChild(minusButton);
 };
 createButtons();
