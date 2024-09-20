@@ -57,5 +57,11 @@ function createButtons() {
     minusButton.textContent = "-";
     minusButton.style.gridRow = "2";
     buttonsContainer.appendChild(minusButton);
+
+    const plusButton = document.createElement("button");
+    plusButton.id = "button-plus";
+    plusButton.textContent = "+";
+    plusButton.style.gridRow = "3";
+    buttonsContainer.appendChild(plusButton);
 };
 createButtons();
