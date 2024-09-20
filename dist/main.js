@@ -29,6 +29,11 @@ function createButtons() {
     commaButton.textContent = ",";
     commaButton.style.gridRow = "5";
     buttonsContainer.appendChild(commaButton);
+    const percentButton = document.createElement("button");
+    percentButton.id = "button-percent";
+    percentButton.textContent = "%";
+    percentButton.style.gridRow = "5";
+    buttonsContainer.appendChild(percentButton);
 }
 ;
 createButtons();
