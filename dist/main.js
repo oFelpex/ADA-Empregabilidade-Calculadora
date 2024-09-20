@@ -35,10 +35,15 @@ function createButtons() {
     percentButton.style.gridRow = "5";
     buttonsContainer.appendChild(percentButton);
     const sqrtButton = document.createElement("button");
-    sqrtButton.id = "button-percent";
+    sqrtButton.id = "button-sqrt";
     sqrtButton.textContent = "√";
     sqrtButton.style.gridRow = "1";
     buttonsContainer.appendChild(sqrtButton);
+    const multiplyButton = document.createElement("button");
+    multiplyButton.id = "button-multiply";
+    multiplyButton.textContent = "X";
+    multiplyButton.style.gridRow = "1";
+    buttonsContainer.appendChild(multiplyButton);
 }
 ;
 createButtons();

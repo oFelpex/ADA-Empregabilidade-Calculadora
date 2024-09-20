@@ -39,5 +39,11 @@ function createButtons() {
     sqrtButton.textContent = "√";
     sqrtButton.style.gridRow = "1";
     buttonsContainer.appendChild(sqrtButton);
+
+    const multiplyButton = document.createElement("button");
+    multiplyButton.id = "button-multiply";
+    multiplyButton.textContent = "X";
+    multiplyButton.style.gridRow = "1";
+    buttonsContainer.appendChild(multiplyButton);
 };
 createButtons();
