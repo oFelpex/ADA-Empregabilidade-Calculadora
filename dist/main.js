@@ -24,6 +24,11 @@ function createButtons() {
     clearButton.id = "button-c";
     clearButton.textContent = "C";
     buttonsContainer.appendChild(clearButton);
+    const commaButton = document.createElement("button");
+    commaButton.id = "button-comma";
+    commaButton.textContent = ",";
+    commaButton.style.gridRow = "5";
+    buttonsContainer.appendChild(commaButton);
 }
 ;
 createButtons();
