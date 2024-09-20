@@ -51,3 +51,7 @@ button {
     grid-column: 1;
     background-color: red;
 }
+#button-equal {
+    height: 100%;
+    background-color: rgb(209, 136, 0);
+}

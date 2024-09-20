@@ -59,6 +59,11 @@ function createButtons() {
     plusButton.textContent = "+";
     plusButton.style.gridRow = "3";
     buttonsContainer.appendChild(plusButton);
+    const equalButton = document.createElement("button");
+    equalButton.id = "button-equal";
+    equalButton.textContent = "=";
+    equalButton.style.gridRow = "4 / span 2";
+    buttonsContainer.appendChild(equalButton);
 }
 ;
 createButtons();
