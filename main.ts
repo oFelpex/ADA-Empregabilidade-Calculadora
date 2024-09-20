@@ -45,5 +45,11 @@ function createButtons() {
     multiplyButton.textContent = "X";
     multiplyButton.style.gridRow = "1";
     buttonsContainer.appendChild(multiplyButton);
+
+    const divisionButton = document.createElement("button");
+    divisionButton.id = "button-division";
+    divisionButton.textContent = "÷";
+    divisionButton.style.gridRow = "1";
+    buttonsContainer.appendChild(divisionButton);
 };
 createButtons();
