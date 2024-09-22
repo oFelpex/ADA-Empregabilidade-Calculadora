@@ -7,9 +7,6 @@ function createButtons() {
         const n_button = document.createElement("button");
         n_button.id = `button-${i}`;
         n_button.textContent = i.toString();
-        n_button.addEventListener("click", () => {
-            console.log(`Button ${i} clicked!`);
-        });
         buttonsContainer.appendChild(n_button);
         n_button.style.gridRow = "5";
         if (i > 0)
@@ -67,3 +64,24 @@ function createButtons() {
 }
 ;
 createButtons();
+function operations(num1, num2, operation) {
+    let result;
+    switch (operation) {
+        case "plus":
+            result = (num1 + num2);
+            break;
+        case "minus":
+            result = (num1 - num2);
+            break;
+        case "multiply":
+            result = (num1 * num2);
+            break;
+        case "division":
+            result = (num1 / num2);
+            break;
+        default:
+            result = 0;
+            break;
+    }
+    return result;
+}
