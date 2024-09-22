@@ -1,92 +1,118 @@
+function createDisplay() {
+	const display = (document.getElementById("display") as HTMLInputElement);
+	if (!display) return console.error("Display not found");
+
+	display.addEventListener("input", () => {
+    if (display.value.length > 15) {
+      display.value = display.value.slice(0, 15);
+    }
+
+	});
+	display.addEventListener("focusin", () => {
+		if (display.value === "0") {
+			display.value = "";
+		}
+	});
+	display.addEventListener("focusout", () => {
+		if (display.value.trim() === "") {
+			display.value = "0";
+		}
+	});
+
+
+}
+
 function createButtons() {
-    const buttonsContainer = document.getElementById("buttons");
-    if (!buttonsContainer) return console.error("Buttons container not found");
-    for (let i: number = 0; i <= 9; i++) {
-        const n_button = document.createElement("button");
-        n_button.id = `button-${i}`;
-        n_button.textContent = i.toString();
-        buttonsContainer.appendChild(n_button);
-        n_button.style.gridRow = "5";
-        if(i > 0)
-            n_button.style.gridRow = "4";
-        if(i > 3)
-            n_button.style.gridRow = "3";
-        if(i > 6)
-            n_button.style.gridRow = "2";
-    };
-    const clearButton = document.createElement("button");
-    clearButton.id = "button-c";
-    clearButton.textContent = "C";
-    buttonsContainer.appendChild(clearButton);
+	createDisplay();
 
-    const commaButton = document.createElement("button");
-    commaButton.id = "button-comma";
-    commaButton.textContent = ",";
-    commaButton.style.gridRow = "5";
-    buttonsContainer.appendChild(commaButton);
+	const buttonsContainer = document.getElementById("buttons");
+	if (!buttonsContainer) return console.error("Buttons container not found");
+	for (let i: number = 0; i <= 9; i++) {
+		const n_button = document.createElement("button");
+		n_button.id = `button-${i}`;
+		n_button.textContent = i.toString();
+		buttonsContainer.appendChild(n_button);
+		n_button.style.gridRow = "5";
+		if (i > 0)
+			n_button.style.gridRow = "4";
+		if (i > 3)
+			n_button.style.gridRow = "3";
+		if (i > 6)
+			n_button.style.gridRow = "2";
+	};
+	const clearButton = document.createElement("button");
+	clearButton.id = "button-c";
+	clearButton.textContent = "C";
+	buttonsContainer.appendChild(clearButton);
 
-    const percentButton = document.createElement("button");
-    percentButton.id = "button-percent";
-    percentButton.textContent = "%";
-    percentButton.style.gridRow = "5";
-    buttonsContainer.appendChild(percentButton);
+	const commaButton = document.createElement("button");
+	commaButton.id = "button-comma";
+	commaButton.textContent = ",";
+	commaButton.style.gridRow = "5";
+	buttonsContainer.appendChild(commaButton);
 
-    const sqrtButton = document.createElement("button");
-    sqrtButton.id = "button-sqrt";
-    sqrtButton.textContent = "√";
-    sqrtButton.style.gridRow = "1";
-    buttonsContainer.appendChild(sqrtButton);
+	const percentButton = document.createElement("button");
+	percentButton.id = "button-percent";
+	percentButton.textContent = "%";
+	percentButton.style.gridRow = "5";
+	buttonsContainer.appendChild(percentButton);
 
-    const multiplyButton = document.createElement("button");
-    multiplyButton.id = "button-multiply";
-    multiplyButton.textContent = "X";
-    multiplyButton.style.gridRow = "1";
-    buttonsContainer.appendChild(multiplyButton);
+	const sqrtButton = document.createElement("button");
+	sqrtButton.id = "button-sqrt";
+	sqrtButton.textContent = "√";
+	sqrtButton.style.gridRow = "1";
+	buttonsContainer.appendChild(sqrtButton);
 
-    const divisionButton = document.createElement("button");
-    divisionButton.id = "button-division";
-    divisionButton.textContent = "÷";
-    divisionButton.style.gridRow = "1";
-    buttonsContainer.appendChild(divisionButton);
+	const multiplyButton = document.createElement("button");
+	multiplyButton.id = "button-multiply";
+	multiplyButton.textContent = "X";
+	multiplyButton.style.gridRow = "1";
+	buttonsContainer.appendChild(multiplyButton);
 
-    const minusButton = document.createElement("button");
-    minusButton.id = "button-minus";
-    minusButton.textContent = "-";
-    minusButton.style.gridRow = "2";
-    buttonsContainer.appendChild(minusButton);
+	const divisionButton = document.createElement("button");
+	divisionButton.id = "button-division";
+	divisionButton.textContent = "÷";
+	divisionButton.style.gridRow = "1";
+	buttonsContainer.appendChild(divisionButton);
 
-    const plusButton = document.createElement("button");
-    plusButton.id = "button-plus";
-    plusButton.textContent = "+";
-    plusButton.style.gridRow = "3";
-    buttonsContainer.appendChild(plusButton);
+	const minusButton = document.createElement("button");
+	minusButton.id = "button-minus";
+	minusButton.textContent = "-";
+	minusButton.style.gridRow = "2";
+	buttonsContainer.appendChild(minusButton);
 
-    const equalButton = document.createElement("button");
-    equalButton.id = "button-equal";
-    equalButton.textContent = "=";
-    equalButton.style.gridRow = "4 / span 2";
-    buttonsContainer.appendChild(equalButton);
+	const plusButton = document.createElement("button");
+	plusButton.id = "button-plus";
+	plusButton.textContent = "+";
+	plusButton.style.gridRow = "3";
+	buttonsContainer.appendChild(plusButton);
+
+	const equalButton = document.createElement("button");
+	equalButton.id = "button-equal";
+	equalButton.textContent = "=";
+	equalButton.style.gridRow = "4 / span 2";
+	buttonsContainer.appendChild(equalButton);
 };
 createButtons();
 
 function operations(num1: number, num2: number, operation: string) {
-    let result: number;
-    switch (operation) {
-        case "plus":
-            result = (num1+num2);
-            break;
-        case "minus":
-            result = (num1-num2);
-            break;
-        case "multiply":
-            result = (num1*num2);
-        break;
-        case "division":
-            result = (num1/num2);
-            break;
-        default:
-            result = 0;
-            break;
-    }
-    return result;
+	let result: number;
+	switch (operation) {
+		case "plus":
+			result = (num1 + num2);
+			break;
+		case "minus":
+			result = (num1 - num2);
+			break;
+		case "multiply":
+			result = (num1 * num2);
+			break;
+		case "division":
+			result = (num1 / num2);
+			break;
+		default:
+			result = 0;
+			break;
+	}
+	return result;
 }

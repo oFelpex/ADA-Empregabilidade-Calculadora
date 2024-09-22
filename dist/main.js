@@ -1,5 +1,26 @@
 "use strict";
+function createDisplay() {
+    const display = document.getElementById("display");
+    if (!display)
+        return console.error("Display not found");
+    display.addEventListener("input", () => {
+        if (display.value.length > 15) {
+            display.value = display.value.slice(0, 15);
+        }
+    });
+    display.addEventListener("focusin", () => {
+        if (display.value === "0") {
+            display.value = "";
+        }
+    });
+    display.addEventListener("focusout", () => {
+        if (display.value.trim() === "") {
+            display.value = "0";
+        }
+    });
+}
 function createButtons() {
+    createDisplay();
     const buttonsContainer = document.getElementById("buttons");
     if (!buttonsContainer)
         return console.error("Buttons container not found");
