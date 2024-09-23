@@ -23,6 +23,11 @@ function createDisplay() {
 }
 function createButtons() {
     let display = createDisplay();
+    let currentValue;
+    display.addEventListener("input", () => {
+        currentValue = Number(display.value);
+        console.log(currentValue);
+    });
     const buttonsContainer = document.getElementById("buttons");
     if (!buttonsContainer)
         return console.error("Buttons container not found");
@@ -46,22 +51,43 @@ function createButtons() {
     clearButton.textContent = "C";
     clearButton.addEventListener("click", () => display.value = "0");
     buttonsContainer.appendChild(clearButton);
-    const commaButton = document.createElement("button");
-    commaButton.id = "button-comma";
-    commaButton.textContent = ",";
-    commaButton.style.gridRow = "5";
-    commaButton.classList.add("displayButton");
-    buttonsContainer.appendChild(commaButton);
-    const percentButton = document.createElement("button");
-    percentButton.id = "button-percent";
-    percentButton.textContent = "%";
-    percentButton.style.gridRow = "5";
-    percentButton.classList.add("displayButton");
-    buttonsContainer.appendChild(percentButton);
+    const squaredButton = document.createElement("button");
+    squaredButton.id = "button-squared";
+    squaredButton.textContent = "²";
+    squaredButton.style.gridRow = "5";
+    squaredButton.classList.add("squaredButton");
+    squaredButton.addEventListener("click", () => {
+        display.value = String((Math.pow(currentValue, 2)));
+        if (display.value === "NaN") {
+            alert("Erro matemático!");
+            display.value = "0";
+        }
+    });
+    buttonsContainer.appendChild(squaredButton);
+    const cubedButton = document.createElement("button");
+    cubedButton.id = "button-cubed";
+    cubedButton.textContent = "³";
+    cubedButton.style.gridRow = "5";
+    cubedButton.classList.add("cubedButton");
+    cubedButton.addEventListener("click", () => {
+        display.value = String((Math.pow(currentValue, 3)));
+        if (display.value === "NaN") {
+            alert("Erro matemático!");
+            display.value = "0";
+        }
+    });
+    buttonsContainer.appendChild(cubedButton);
     const sqrtButton = document.createElement("button");
     sqrtButton.id = "button-sqrt";
     sqrtButton.textContent = "√";
     sqrtButton.style.gridRow = "1";
+    sqrtButton.addEventListener("click", () => {
+        display.value = String((Math.sqrt(currentValue).toFixed(2)));
+        if (display.value === "NaN") {
+            alert("Erro matemático!");
+            display.value = "0";
+        }
+    });
     buttonsContainer.appendChild(sqrtButton);
     const multiplyButton = document.createElement("button");
     multiplyButton.id = "button-multiply";
@@ -92,7 +118,7 @@ function createButtons() {
     equalButton.textContent = "=";
     equalButton.style.gridRow = "4 / span 2";
     buttonsContainer.appendChild(equalButton);
-    function showNumbers() {
+    function showNumbersOnDisplay() {
         let buttons = Array.from(document.getElementsByClassName("displayButton"));
         buttons.forEach((element) => {
             element.addEventListener("click", () => {
@@ -100,10 +126,12 @@ function createButtons() {
                     display.value = "";
                 }
                 display.value += element.innerHTML;
+                currentValue = Number(display.value);
+                console.log(currentValue);
             });
         });
     }
-    showNumbers();
+    showNumbersOnDisplay();
 }
 ;
 createButtons();
